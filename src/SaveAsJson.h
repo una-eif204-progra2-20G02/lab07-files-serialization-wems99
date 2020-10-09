@@ -13,10 +13,7 @@ class SaveAsJson: public IObjectSave {
 
 public:
 
-    string serealizando(Person) override;
-
-    void save(Person) override;
-
+    void save(vector<Person>) override;
 
 };
 

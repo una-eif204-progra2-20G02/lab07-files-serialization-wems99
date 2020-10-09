@@ -4,7 +4,7 @@
 
 #include "SaveAsBinary.h"
 
-void SaveAsBinary::save(Person person) {
+void SaveAsBinary::save(vector<Person> persons) {
 
     ofstream  archivo;
 
@@ -20,7 +20,7 @@ void SaveAsBinary::save(Person person) {
 
     }
 
-    archivo.write((char*) &person, sizeof(Person));
+    archivo.write((char*) &persons, sizeof(Person));
 
     archivo.close();
 

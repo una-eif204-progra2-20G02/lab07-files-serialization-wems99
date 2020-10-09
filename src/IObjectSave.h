@@ -6,6 +6,7 @@
 #define LAB07_FILES_SERIALIZATION_WEMS99_IOBJECTSAVE_H
 
 #include "Person.h"
+#include "PersonManager.h"
 #include <fstream>
 #include <iostream>
 #include <iomanip>
@@ -14,9 +15,8 @@ class IObjectSave {
 
 public:
 
-    virtual void save(Person) = 0;
+    virtual void save(vector<Person> persons) = 0;
 
-    virtual string serealizando(Person) = 0;
 
     virtual ~IObjectSave();
 

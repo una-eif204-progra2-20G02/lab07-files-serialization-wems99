@@ -4,23 +4,21 @@
 
 #include "SaveAsJson.h"
 
-string SaveAsJson::serealizando(Person person) {
+
+void SaveAsJson::save(vector<Person> persons) {
+
+    ofstream archivo;
 
     json jsonPerson;
 
-    jsonPerson["id"] = person.getId();
-    jsonPerson["age"] = person.getAge();
-    jsonPerson["name"] = person.getName();
+    for(int i = 0; i < persons.size(); i++) {
+
+        jsonPerson["id"] = persons[i].getId();
+        jsonPerson["age"] = persons[i].getAge();
+        jsonPerson["name"] = persons[i].getName();
+    }
 
     string personaSerealizada = jsonPerson.dump(4);
-
-    return personaSerealizada;
-
-}
-
-void SaveAsJson::save(Person person) {
-
-    ofstream archivo;
 
     try{
 
@@ -35,7 +33,7 @@ void SaveAsJson::save(Person person) {
 
     }
 
-    archivo<< serealizando(person)<<endl;
+    archivo<< personaSerealizada<<endl;
 
     archivo.close();
 
